@@ -2,13 +2,54 @@
     margin:0;
 
 }
+
+.screen{
+    display:flex;
+    /* gap:2em; */
+    /* border: 2px solid green; */
+    justify-items: center;
+    align-items: center;
+    gap:2em;
+    
+
+}
+
+.options{
+    display:flex;
+    flex-direction: column;
+    gap:3em;
+    padding: 20px;
+    width: 50vh;
+    /* border: 3px solid red; */
+    height: 90vh;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.choices{
+    display:flex;
+    gap:2em;
+
+}
+
+.choices button{
+    background-color: pink;
+    padding:10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
 .container{
     height:100vh;
     width:100vh;
     border:2px solid black;
     display:flex;
     flex-direction: column;
-    margin:auto;
+    margin-left: auto;
+    
 }
 
 .row{
@@ -26,4 +67,13 @@
     flex:1;
 
     
+}
+
+.penmode .status{
+    color:red;
+}
+
+.penmode{
+    display: flex;
+    gap:1em;
 }
