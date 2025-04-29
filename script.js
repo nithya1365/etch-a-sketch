@@ -123,12 +123,14 @@ function enable()
         cont.addEventListener("mouseover", handleHover);
         stat.style.color = "green";
         stat.textContent = "ENABLED";
+        cont.style.cursor = "grabbing";
         }
         else
         {
             cont.removeEventListener("mouseover", handleHover);
             stat.style.color = "red";
             stat.textContent = "DISABLED";
+            cont.style.cursor = "grab";
 
         }
 
