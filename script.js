@@ -1,6 +1,41 @@
+//pallete
+const pal = document.querySelector(".pallete");
+let cols = ["#824d5c", "#567c8d", "#3b0a0a", "#48182f"];
+let clr=cols[0];
+
+for(let i =0; i<4; i++)
+{
+    const cb = document.createElement("div");
+    cb.classList.add("colbox");
+    cb.style.backgroundColor = cols[i];
+    if(i==0)
+        cb.classList.add('selected');
+
+    cb.addEventListener('click', ()=>
+    {
+        document.querySelectorAll('.colbox').forEach(box=> {
+            box.classList.remove('selected');
+
+        })
+        cb.classList.add('selected');
+        clr = cols[i];
+    })
+
+    pal.appendChild(cb);
+}
+
+
+
+
+
+
+
 const cont = document.querySelector(".container");
 let num;
-num = +prompt("enter num of squaraes");
+do{
+num = +prompt("enter pixel size");
+}
+while(num>100);
 function makeBox()
 {
     const box = document.createElement("div");
@@ -36,7 +71,6 @@ function makeGrid()
         {
             const box = document.createElement("div");
     box.classList.add('box');
-    // box.innerText = "hello"
             row.appendChild(box);
         }
         cont.appendChild(row);
@@ -49,7 +83,7 @@ boxes = document.querySelectorAll(".box");
 
 reset.addEventListener('click', ()=>{
     boxes.forEach(box=>{
-        box.style.backgroundColor = "white";
+        box.style.backgroundColor = "#f4e1e0";
     })
 })
 
@@ -64,16 +98,13 @@ function colorBox()
      )
 }
 
-let cnt=1;
-
-
-
 let pen = false;
 
 function handleHover(e)
 {
     if (e.target.classList.contains("box")) {
-        e.target.style.backgroundColor = c;
+        e.target.style.backgroundColor = clr;
+        console.log(e.target.style.backgroundColor);
     }
 
 
