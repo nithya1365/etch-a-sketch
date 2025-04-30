@@ -34,23 +34,32 @@
 
 
 
-.choices{
+.choices, .modes{
     display:flex;
-    gap:2em;
+    gap:1.5em;
 
 }
 
-.choices button{
+
+
+.choices button, .modes button{
     background-color:#e5c5c1;
     padding:10px;
     border: 1px solid black;
     border-radius: 20px;
     cursor: pointer;
+    width: 100px;
 }
 
-.choices button:hover{
+
+.modesel{
+    border: 2px solid white;
+}
+
+.choices button:hover, .modes button:hover{
     background-color: #bd8e89;
 }
+
 
 .pallete{
     /* border: 2px solid white; */
@@ -81,13 +90,14 @@
 .screen .container{
     height:90vh;
     width:90vh;
-    border:5px solid #bd8e89;
+    border:10px solid #bd8e89;
     display:flex;
     flex-direction: column;
     margin-left: 100px;
     background-color: #f4e1e0;
-    cursor:grabbing;
-    cursor:grab
+    cursor:grab;
+   
+
     
 }
 
@@ -100,12 +110,16 @@
     
 }
 .box{
-    /* border: 2px solid black; */
+    /* border: 1px solid black; */
     display:flex;
     flex-direction: column;
     flex:1;
 
     
+}
+
+.showgrid{
+    border: 1px solid rgb(167, 162, 162);
 }
 
 .penmode .status{

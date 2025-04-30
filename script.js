@@ -24,43 +24,45 @@ for(let i =0; i<4; i++)
     pal.appendChild(cb);
 }
 
+const gr = document.querySelector(".grd");
+gr.addEventListener('click', ()=>{
+    document.querySelectorAll('.box').forEach(box=>{
+        box.classList.toggle('showgrid');
+    })
+})
+
+//penmodes
+document.querySelector('.pen').style.border = "2px solid white";
+const mode = document.querySelectorAll('.modes button');
+mode.forEach(ele => {
+    
+    ele.addEventListener('click', ()=>
+    {
+        // ele.style.backgroundColor = "red";
+        mode.forEach(bt=>{
+            bt.style.border = "2px solid black";
+        })
+        ele.style.border = "2px solid white";
+        
+    })
+
+    
+});
 
 
 
 
 
 
+//enter pixel size
 const cont = document.querySelector(".container");
 let num;
 do{
 num = +prompt("enter pixel size");
 }
 while(num>100);
-function makeBox()
-{
-    const box = document.createElement("div");
-    box.classList.add('box');
-}
 
-const col = document.querySelector(".color");
-let c = "blue";
-col.addEventListener('click', ()=>{
-    c = prompt("enter color")
-    c = c.toLowerCase();
-    console.log(c);
-
-
-})
-
-const reset = document.querySelector(".reset");
-let boxes = [];
-
-
-
-
-// 20
-
-
+//make grid canvas
 function makeGrid()
 {
     for(let i=1; i<=num; i++)
@@ -77,8 +79,33 @@ function makeGrid()
     }
    
 }
-
 makeGrid();
+
+
+
+const col = document.querySelector(".color");
+let c = "blue";
+col.addEventListener('click', ()=>{
+    c = prompt("enter color")
+    clr = c.toLowerCase();
+    console.log(c);
+    pal.querySelectorAll('.colbox').forEach(x=>{
+        x.classList.remove('selected');
+    })
+
+
+})
+
+const reset = document.querySelector(".reset");
+let boxes = [];
+
+
+
+
+
+
+
+//resetting
 boxes = document.querySelectorAll(".box");
 
 reset.addEventListener('click', ()=>{
@@ -87,6 +114,8 @@ reset.addEventListener('click', ()=>{
     })
 })
 
+
+//color canvas
 function colorBox()
 {
     cont.addEventListener('mouseover', (e)=>
@@ -143,3 +172,10 @@ function enable()
 }
 
 enable();
+
+
+//here add logic for pencil: increase opacity by 10% every time we hover over a pixel
+
+
+
+//here add blackboard logic: canvas- black, pen color- white+ opacity logic
